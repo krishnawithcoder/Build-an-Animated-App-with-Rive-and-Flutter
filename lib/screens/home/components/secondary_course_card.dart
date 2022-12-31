@@ -34,10 +34,10 @@ class SecondaryCourseCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 const Text(
-                  "Watch video - 15 mins",
+                  "CLICK HERE CHECH STATUS",
                   style: TextStyle(
                     color: Colors.white60,
-                    fontSize: 16,
+                    fontSize: 12,
                   ),
                 )
               ],

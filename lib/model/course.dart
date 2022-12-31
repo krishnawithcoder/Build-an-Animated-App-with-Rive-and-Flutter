@@ -14,25 +14,49 @@ class Course {
 
 final List<Course> courses = [
   Course(
-    title: "Animations in SwiftUI",
+    title: "Real Time Data",
   ),
   Course(
-    title: "Animations in Flutter",
+    title: "Real Time Data",
     iconSrc: "assets/icons/code.svg",
     color: const Color(0xFF80A4FF),
   ),
 ];
 
 final List<Course> recentCourses = [
-  Course(title: "State Machine"),
+  Course(title: "1"),
   Course(
-    title: "Animated Menu",
+    title: "1",
     color: const Color(0xFF9CC5FF),
     iconSrc: "assets/icons/code.svg",
   ),
-  Course(title: "Flutter with Rive"),
+  Course(title: "2"),
   Course(
-    title: "Animated Menu",
+    title: "2",
+    color: const Color(0xFF9CC5FF),
+    iconSrc: "assets/icons/code.svg",
+  ),
+  Course(title: "3"),
+  Course(
+    title: "3",
+    color: const Color(0xFF9CC5FF),
+    iconSrc: "assets/icons/code.svg",
+  ),
+  Course(title: "4"),
+  Course(
+    title: "4",
+    color: const Color(0xFF9CC5FF),
+    iconSrc: "assets/icons/code.svg",
+  ),
+  Course(title: "5"),
+  Course(
+    title: "6",
+    color: const Color(0xFF9CC5FF),
+    iconSrc: "assets/icons/code.svg",
+  ),
+  Course(title: "7"),
+  Course(
+    title: "7",
     color: const Color(0xFF9CC5FF),
     iconSrc: "assets/icons/code.svg",
   ),

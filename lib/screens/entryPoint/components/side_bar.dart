@@ -28,66 +28,68 @@ class _SideBarState extends State<SideBar> {
         ),
         child: DefaultTextStyle(
           style: const TextStyle(color: Colors.white),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const InfoCard(
-                name: "Abu Anwar",
-                bio: "YouTuber",
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 24, top: 32, bottom: 16),
-                child: Text(
-                  "Browse".toUpperCase(),
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium!
-                      .copyWith(color: Colors.white70),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const InfoCard(
+                  name: "Krishna Singh",
+                  bio: "flutter",
                 ),
-              ),
-              ...sidebarMenus
-                  .map((menu) => SideMenu(
-                        menu: menu,
-                        selectedMenu: selectedSideMenu,
-                        press: () {
-                          RiveUtils.chnageSMIBoolState(menu.rive.status!);
-                          setState(() {
-                            selectedSideMenu = menu;
-                          });
-                        },
-                        riveOnInit: (artboard) {
-                          menu.rive.status = RiveUtils.getRiveInput(artboard,
-                              stateMachineName: menu.rive.stateMachineName);
-                        },
-                      ))
-                  .toList(),
-              Padding(
-                padding: const EdgeInsets.only(left: 24, top: 40, bottom: 16),
-                child: Text(
-                  "History".toUpperCase(),
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium!
-                      .copyWith(color: Colors.white70),
+                Padding(
+                  padding: const EdgeInsets.only(left: 24, top: 32, bottom: 16),
+                  child: Text(
+                    "Browse".toUpperCase(),
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium!
+                        .copyWith(color: Colors.white70),
+                  ),
                 ),
-              ),
-              ...sidebarMenus2
-                  .map((menu) => SideMenu(
-                        menu: menu,
-                        selectedMenu: selectedSideMenu,
-                        press: () {
-                          RiveUtils.chnageSMIBoolState(menu.rive.status!);
-                          setState(() {
-                            selectedSideMenu = menu;
-                          });
-                        },
-                        riveOnInit: (artboard) {
-                          menu.rive.status = RiveUtils.getRiveInput(artboard,
-                              stateMachineName: menu.rive.stateMachineName);
-                        },
-                      ))
-                  .toList(),
-            ],
+                ...sidebarMenus
+                    .map((menu) => SideMenu(
+                          menu: menu,
+                          selectedMenu: selectedSideMenu,
+                          press: () {
+                            RiveUtils.chnageSMIBoolState(menu.rive.status!);
+                            setState(() {
+                              selectedSideMenu = menu;
+                            });
+                          },
+                          riveOnInit: (artboard) {
+                            menu.rive.status = RiveUtils.getRiveInput(artboard,
+                                stateMachineName: menu.rive.stateMachineName);
+                          },
+                        ))
+                    .toList(),
+                Padding(
+                  padding: const EdgeInsets.only(left: 24, top: 40, bottom: 16),
+                  child: Text(
+                    "History".toUpperCase(),
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium!
+                        .copyWith(color: Colors.white70),
+                  ),
+                ),
+                ...sidebarMenus2
+                    .map((menu) => SideMenu(
+                          menu: menu,
+                          selectedMenu: selectedSideMenu,
+                          press: () {
+                            RiveUtils.chnageSMIBoolState(menu.rive.status!);
+                            setState(() {
+                              selectedSideMenu = menu;
+                            });
+                          },
+                          riveOnInit: (artboard) {
+                            menu.rive.status = RiveUtils.getRiveInput(artboard,
+                                stateMachineName: menu.rive.stateMachineName);
+                          },
+                        ))
+                    .toList(),
+              ],
+            ),
           ),
         ),
       ),
