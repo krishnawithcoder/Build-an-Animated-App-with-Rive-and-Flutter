@@ -1,11 +1,9 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 import 'package:rive_animation/constants.dart';
 import 'package:rive_animation/screens/home/home_screen.dart';
 import 'package:rive_animation/utils/rive_utils.dart';
-
 import '../../model/menu.dart';
 import 'components/btm_nav_item.dart';
 import 'components/menu_btn.dart';
@@ -150,28 +148,31 @@ class _EntryPointState extends State<EntryPoint>
                 ),
               ],
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ...List.generate(
-                  bottomNavItems.length,
-                  (index) {
-                    Menu navBar = bottomNavItems[index];
-                    return BtmNavItem(
-                      navBar: navBar,
-                      press: () {
-                        RiveUtils.chnageSMIBoolState(navBar.rive.status!);
-                        updateSelectedBtmNav(navBar);
-                      },
-                      riveOnInit: (artboard) {
-                        navBar.rive.status = RiveUtils.getRiveInput(artboard,
-                            stateMachineName: navBar.rive.stateMachineName);
-                      },
-                      selectedNav: selectedBottonNav,
-                    );
-                  },
-                ),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ...List.generate(
+                    bottomNavItems.length,
+                    (index) {
+                      Menu navBar = bottomNavItems[index];
+                      return BtmNavItem(
+                        navBar: navBar,
+                        press: () {
+                          RiveUtils.chnageSMIBoolState(navBar.rive.status!);
+                          updateSelectedBtmNav(navBar);
+                        },
+                        riveOnInit: (artboard) {
+                          navBar.rive.status = RiveUtils.getRiveInput(artboard,
+                              stateMachineName: navBar.rive.stateMachineName);
+                        },
+                        selectedNav: selectedBottonNav,
+                      );
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
         ),
